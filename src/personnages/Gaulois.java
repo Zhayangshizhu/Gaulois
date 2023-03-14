@@ -39,7 +39,11 @@ public class Gaulois {
 		romain.recevoirCoup((force / 3)*this.effetPotion);
 	}
 	
-
+	public void boirePotion(int effetPotion){
+		this.effetPotion=effetPotion;
+		parler("  Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée.");
+			
+	}
 
 	
 	@Override
@@ -54,6 +58,12 @@ public class Gaulois {
 		// TODO Auto-generated method stub
 		Gaulois asterix  = new Gaulois("Asterix",8);
 		System.out.println(asterix);
+		
+		//test de boirePotion
+		asterix.boirePotion(2);
+		System.out.println(asterix);
+		
+		
 	}
 
 

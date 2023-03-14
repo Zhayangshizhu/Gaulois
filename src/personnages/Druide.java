@@ -2,6 +2,10 @@ package personnages;
 
 import java.util.Random;
 
+import com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException;
+
+import zhayang.Gaulois;
+
 public class Druide {
 	private String nom;
 	private int effetPotionMin ; 
@@ -44,10 +48,27 @@ public class Druide {
 		}
 	}
 	
+	public void booster(Gaulois gaulois){
+		if (gaulois.getNom()=="Ob¨¦lix") {
+			parler("  Non, Ob¨¦lix !... Tu n¡¯auras pas de potion magique ! ");
+			gaulois.parler("Par B¨¦l¨¦nos, ce n'est pas juste !");
+		}
+		
+		else {
+			
+			gaulois.boirePotion(effetPotion);
+		}
+}
+
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Druide panoramix = new Druide("Panoramix", 5, 10);
+		for (int i = 0; i < 10; i++) {
+			panoramix.preparePotion();
+			
+		}
 	}
 
 }
